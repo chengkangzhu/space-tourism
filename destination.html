@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
+  <script src="index.js"></script>
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+  <main class="destination">
+    <h5 class="destination-intro"><span>01</span>Pick your destination</h5>
+    <div class="destination-wrapper">
+      <img class="destination-image" src="/assets/destination/image-moon.png" alt="picture of moon">
+      <div class="destination-content">
+        <ul class="destination-content-navbar">
+          <li>
+            <a href="#" class="nav-text active" onclick='change_destination("Moon")' id="Moon">Moon</a>
+          </li>
+          <li>
+            <a href="#" class="nav-text" onclick='change_destination("Mars")' id="Mars">Mars</a>
+          </li>
+          <li>
+            <a href="#" class="nav-text" onclick='change_destination("Europa")' id="Europa">Europa</a>
+          </li>
+          <li>
+            <a href="#" class="nav-text" onclick='change_destination("Titan")' id="Titan">Titan</a>
+          </li>
+        </ul>
+        <h2 class="destination-name">MOON</h2>
+        <p class="destination-info">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+        <div class="hr"></div>
+        <table>
+          <tr> 
+            <td class="subhead-2">avg. distance</td>
+            <td class="subhead-2">Est. travel time</td>
+          </tr>
+          <tr> 
+            <td class="subhead-1 destination-distance">384,400 km</td>
+            <td class="subhead-1 destination-time">3 days</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/c761e5bd78.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap" rel="stylesheet">
+  <script src="index.js"></script>
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body id="body">
+  <header id="header">
+    <img class="logo" src="/assets/shared/logo.svg" alt="logo" id="logo">
+    <div class="hr"></div>
+    <i class="fa-solid fa-bars navbar-menu navbar-icon-js"></i>
+    <ul id="navbar" class="hide-navbar">
+      <i class="fa-solid fa-xmark navbar-exit navbar-icon-js"></i>
+      <li>
+        <a href="#" class="nav-text active" onclick='change_bg("home")' id="home">
+          <span>00 </span>HOME
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-text" onclick='change_bg("destination")'   id="destination">
+          <span>01 </span>DESTINATION 
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-text" onclick='change_bg("crew")'   id="crew">
+          <span>02 </span>CREW
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-text" onclick='change_bg("technology")'   id="technology">
+          <span>03 </span>TECHNOLOGY
+        </a>
+      </li>
+    </ul>
+  </header>
+  <main id="main" class="home">
+    <div class="hero-text">
+      <h5>SO, YOU WANT TO TRAVEL TO</h5>
+      <h1>SPACE</h1>
+      <p>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+    </div>
+    <a href="#" class="explore-circle">
+      <h4>EXPLORE</h4>
+    </a>
+  </main>
+  <iframe frameborder="0" id="iframe"></iframe>
+</body>
+</html>
