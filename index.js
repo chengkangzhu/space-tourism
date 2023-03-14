@@ -1,58 +1,7 @@
-let data = {};
-let device;
-let sectionx = "home";
 
-// function defineDevice() {
-// 	if (window.innerWidth <= 480) {
-// 		device = "mobile";
-// 	} else if (window.innerWidth <= 1024) {
-// 		device = "tablet";
-// 	} else {
-// 		device = "desktop";
-// 	}
-// }
-// defineDevice();
 
-// window.addEventListener("resize", function () {
-// 	defineDevice();
 
-// 	if (document.querySelector("#body")) {
-// 		document.querySelector(
-// 			"#body"
-// 		).style.backgroundImage = `url(/assets/${sectionx}/background-${sectionx}-${device}.jpg)`;
-// 	}
-// });
 
-function change_bg(section) {
-	//change background
-	if (section != undefined) {
-		document
-			.querySelectorAll("#navbar li a")
-			.forEach((i) => i.classList.remove("active"));
-		document.getElementById(section).classList.add("active");
-	}
-
-	//toggle home and iframe
-	if (section == "home") {
-		document.querySelector(".home").style.display = "flex";
-		document.querySelector("#iframe").style.display = "none";
-	} else {
-		document.querySelector(".home").style.display = "none";
-		setTimeout(() => {
-			document
-				.querySelector("#iframe")
-				.setAttribute("src", `/${section}.html`);
-
-			//iframe width change on technology page
-		}, 300);
-		setTimeout(() => {
-			document.querySelector("#iframe").style.display = "flex";
-		}, 500);
-	}
-}
-
-//click logo change to
-// document.querySelector('#logo').addEventListener('click',function(){change_bg('home')})
 
 function change_destination(destination) {
 	if (destination != undefined) {
