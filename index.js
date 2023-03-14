@@ -2,34 +2,30 @@ let data = {};
 let device;
 let sectionx = "home";
 
-function defineDevice() {
-	if (window.innerWidth <= 480) {
-		device = "mobile";
-	} else if (window.innerWidth <= 1024) {
-		device = "tablet";
-	} else {
-		device = "desktop";
-	}
-}
-defineDevice();
+// function defineDevice() {
+// 	if (window.innerWidth <= 480) {
+// 		device = "mobile";
+// 	} else if (window.innerWidth <= 1024) {
+// 		device = "tablet";
+// 	} else {
+// 		device = "desktop";
+// 	}
+// }
+// defineDevice();
 
-window.addEventListener("resize", function () {
-	defineDevice();
+// window.addEventListener("resize", function () {
+// 	defineDevice();
 
-	if (document.querySelector("#body")) {
-		document.querySelector(
-			"#body"
-		).style.backgroundImage = `url(/assets/${sectionx}/background-${sectionx}-${device}.jpg)`;
-	}
-});
+// 	if (document.querySelector("#body")) {
+// 		document.querySelector(
+// 			"#body"
+// 		).style.backgroundImage = `url(/assets/${sectionx}/background-${sectionx}-${device}.jpg)`;
+// 	}
+// });
 
 function change_bg(section) {
-	sectionx = section;
 	//change background
 	if (section != undefined) {
-		document.querySelector(
-			"#body"
-		).style.backgroundImage = `url(/assets/${section}/background-${section}-${device}.jpg)`;
 		document
 			.querySelectorAll("#navbar li a")
 			.forEach((i) => i.classList.remove("active"));
@@ -38,10 +34,10 @@ function change_bg(section) {
 
 	//toggle home and iframe
 	if (section == "home") {
-		document.querySelector("#main").style.display = "flex";
+		document.querySelector(".home").style.display = "flex";
 		document.querySelector("#iframe").style.display = "none";
 	} else {
-		document.querySelector("#main").style.display = "none";
+		document.querySelector(".home").style.display = "none";
 		setTimeout(() => {
 			document
 				.querySelector("#iframe")
@@ -155,18 +151,20 @@ fetch("./data.json")
 		console.log(d);
 	});
 
+//responsive functions
+//navbar menu
+let navbar = document.querySelector("#navbar");
+document.querySelectorAll(".navbar-icon-js").forEach((link) => {
+	link.addEventListener("click", function () {
+		navbar.classList.toggle("hide-navbar");
+	});
+});
+document.querySelectorAll("#navbar li a").forEach((link) => {
+	link.addEventListener("click", function () {
+		navbar.classList.toggle("hide-navbar");
+	});
+});
+
 $(document).ready(function () {
-	//responsive functions
-	//navbar menu
-	let navbar = document.querySelector("#navbar");
-	document.querySelectorAll(".navbar-icon-js").forEach((link) => {
-		link.addEventListener("click", function () {
-			navbar.classList.toggle("hide-navbar");
-		});
-	});
-	document.querySelectorAll("#navbar li a").forEach((link) => {
-		link.addEventListener("click", function () {
-			navbar.classList.toggle("hide-navbar");
-		});
-	});
+	console.log("jQuery is working!");
 });
