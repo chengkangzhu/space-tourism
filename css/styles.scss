@@ -1,5 +1,7 @@
 @import "global";
 
+/* Portrait */
+
 #header {
 	z-index: 10;
 	height: 96px;
@@ -93,11 +95,77 @@
 			position: relative;
 			top: 38px;
 		}
+		@media (max-width: 1240px) {
+			padding-right: 0;
+		}
 	}
-}
 
-body {
-	overflow: hidden;
+	//nav bar media queries
+	@media (max-width: 1023px) {
+		top: 0;
+		.hr {
+			display: none;
+		}
+
+		#navbar {
+			gap: 37px;
+		}
+	}
+
+	//responsive
+	@media (max-width: 768px) {
+		.logo {
+			width: 40px;
+			height: 40px;
+			margin-left: 24px;
+		}
+
+		.navbar-menu {
+			display: block;
+		}
+
+		.navbar-exit {
+			display: block;
+		}
+
+		#navbar {
+			background-color: rgba(89, 100, 131, 0.1);
+			position: fixed;
+			top: 0;
+			right: 0;
+			flex-direction: column;
+			min-width: 67vw;
+			padding: 118px 0 0 0;
+			backdrop-filter: blur(30px);
+			height: 100vh;
+			justify-content: flex-start;
+			gap: 0 !important;
+			display: flex;
+			transition: right 0.5s ease-in;
+
+			a {
+				font-size: 1.6rem;
+				letter-spacing: 2.7px;
+				padding: 24px 32px;
+
+				&:after {
+					display: none;
+				}
+
+				span {
+					margin-right: 14px;
+				}
+			}
+
+			.active:after {
+				display: none;
+			}
+		}
+
+		.hide-navbar {
+			right: -100% !important;
+		}
+	}
 }
 
 #home {
@@ -111,9 +179,6 @@ body {
 
 	.hero-text {
 		max-width: 450px;
-		@media (max-width: 480px) {
-			padding: 20px;
-		}
 
 		h1 {
 			margin: 24px 0;
@@ -135,63 +200,68 @@ body {
 		p {
 			color: $lightblue;
 		}
+
+		@media (max-width: 480px) {
+			padding: 20px;
+		}
 	}
 
-	// .explore-circle {
-	// 	margin-top: 400px;
-	// 	width: 275px;
-	// 	height: 275px;
-	// 	background-color: white;
-	// 	display: grid;
-	// 	place-items: center;
-	// 	border-radius: 50%;
-	// 	text-decoration: none;
-	// 	position: relative;
-	// 	z-index: 1;
+	.explore-circle {
+		margin-top: 400px;
+		width: 275px;
+		height: 275px;
+		background-color: white;
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		text-decoration: none;
+		position: relative;
+		z-index: 1;
 
-	// 	@media (max-width: 950px) {
-	// 		margin-top: 0;
-	// 		width: 242px;
-	// 		height: 242px;
-	// 	}
+		&:before {
+			content: "";
+			width: 274px;
+			height: 274px;
+			position: absolute;
+			border-radius: 50%;
+			opacity: 0.5;
+			transition: 1s ease;
+			z-index: -1;
+		}
 
-	// 	@media (max-width: 48px) {
-	// 		width: 150px;
-	// 		height: 150px;
-	// 	}
+		&:hover:before {
+			width: 450px;
+			height: 450px;
+			background-color: $grey;
+		}
 
-	// 	&:before {
-	// 		content: "";
-	// 		width: 274px;
-	// 		height: 274px;
-	// 		position: fixed;
-	// 		border-radius: 50%;
-	// 		opacity: 0.5;
-	// 		transition: 1s ease;
-	// 		z-index: -1;
-	// 	}
+		h4 {
+			text-align: center;
+			color: #0b0d17;
+			z-index: 10;
+		}
 
-	// 	&:hover:before {
-	// 		width: 450px;
-	// 		height: 450px;
-	// 		background-color: $grey;
-	// 	}
+		@media (max-width: 950px) {
+			margin-top: 0;
+			width: 242px;
+			height: 242px;
+		}
 
-	// 	h4 {
-	// 		text-align: center;
-	// 		color: #0b0d17;
-	// 		z-index: 10;
-	// 	}
-	// }
+		@media (max-width: 48px) {
+			width: 150px;
+			height: 150px;
+		}
+	}
+
+	@media ((max-width: 1023px)) {
+		background-image: url("../assets//home/background-home-tablet.jpg");
+	}
 
 	@media (max-width: 950px) {
 		flex-direction: column;
 		text-align: center;
 	}
 
-	@media ((max-width: 1024px)) {
-		background-image: url("../assets//home/background-home-tablet.jpg");
-	}
 	@media ((max-width: 480px)) {
 		background-image: url("../assets//home/background-home-mobile.jpg");
 	}
@@ -204,29 +274,22 @@ body {
 	background-image: url("../assets/destination/background-destination-desktop.jpg");
 	background-size: cover;
 
-	@media ((max-width: 1100px)) {
-		background-image: url("../assets/destination/background-destination-tablet.jpg");
-	}
-	@media ((max-width: 480px)) {
-		background-image: url("../assets/destination/background-destination-mobile.jpg");
-	}
-
 	.destination-intro {
 		text-transform: uppercase;
 		margin: 200px 0 64px 11vw;
 
-		@media (max-width: 1100px) {
+		span {
+			opacity: 0.25;
+			margin-right: 28px;
+		}
+
+		@media (max-width: 1023px) {
 			margin: 136px 0 30px 40px;
 		}
 		@media (max-width: 768px) {
 			text-align: center;
 			margin-right: 0;
 			margin-left: 0;
-		}
-
-		span {
-			opacity: 0.25;
-			margin-right: 28px;
 		}
 	}
 
@@ -235,16 +298,12 @@ body {
 		justify-content: space-evenly;
 		align-items: center;
 
-		@media (max-width: 1100px) {
-			flex-direction: column;
-		}
-
 		img {
 			margin-top: 30px;
 			width: 445px;
 			height: 445px;
 
-			@media (max-width: 1100px) {
+			@media (max-width: 1023px) {
 				width: 300px;
 				height: 300px;
 			}
@@ -258,7 +317,7 @@ body {
 		.destination-content {
 			max-width: 445px;
 
-			@media (max-width: 1100px) {
+			@media (max-width: 1023px) {
 				text-align: center;
 			}
 			@media (max-width: 480px) {
@@ -269,7 +328,7 @@ body {
 				display: flex;
 				gap: 35px;
 
-				@media (max-width: 1100px) {
+				@media (max-width: 1023px) {
 					justify-content: center;
 					margin-top: 50px;
 				}
@@ -308,7 +367,7 @@ body {
 
 			h2 {
 				margin: 37px 0 15px;
-				@media (max-width: 1100px) {
+				@media (max-width: 1023px) {
 					margin: 30px 0 0;
 				}
 			}
@@ -316,7 +375,7 @@ body {
 			p {
 				color: $lightblue;
 				margin-bottom: 54px;
-				@media (max-width: 1100px) {
+				@media (max-width: 1023px) {
 					margin-bottom: 30px;
 				}
 			}
@@ -342,6 +401,17 @@ body {
 			}
 		}
 	}
+
+	@media ((max-width: 1023px)) {
+		background-image: url("../assets/destination/background-destination-tablet.jpg");
+
+		.destination-wrapper {
+			flex-direction: column;
+		}
+	}
+	@media ((max-width: 480px)) {
+		background-image: url("../assets/destination/background-destination-mobile.jpg");
+	}
 }
 
 #crew {
@@ -351,23 +421,21 @@ body {
 	background-image: url("../assets/crew/background-crew-desktop.jpg");
 	background-size: cover;
 
-	@media ((max-width: 1024px)) {
-		background-image: url("../assets/crew//background-crew-tablet.jpg");
-	}
-	@media ((max-width: 480px)) {
-		background-image: url("../assets/crew/background-crew-mobile.jpg");
-	}
-
 	.crew-intro {
 		text-transform: uppercase;
-		margin: 200px 0 64px 11vw;
-		@media (max-width: 1100px) {
-			margin: 136px 0 30px 40px;
-		}
+		margin: 200px 0 0px 11vw;
 
 		span {
 			opacity: 0.25;
 			margin-right: 28px;
+		}
+
+		@media (max-width: 1023px) {
+			margin: 136px 0 0px 40px;
+		}
+		@media ((max-width: 768px)) {
+			margin-left: 0;
+			text-align: center;
 		}
 	}
 
@@ -376,33 +444,40 @@ body {
 		display: flex;
 		position: relative;
 		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		height: 100%;
-		@media (max-width: 1100px) {
-			flex-direction: column;
-		}
+		justify-content: space-evenly;
+		align-items: flex-start;
+		height: calc(100vh - 234px);
 
 		.crew-contents {
-			max-width: 500px;
+			max-width: 620px;
 			height: 100%;
-			@media (max-width: 1100px) {
+			@media (max-width: 1023px) {
 				text-align: center;
+				height: auto;
 			}
 
 			h4 {
 				text-transform: uppercase;
 				opacity: 0.5;
 				margin: 154px 0 15px;
-				@media (max-width: 1100px) {
-					margin: 60px 0 8px;
+
+				@media (max-width: 1200px) {
+					margin-top: 60px;
+				}
+
+				@media (max-width: 1023px) {
+					margin-bottom: 8px;
+				}
+
+				@media ((max-width: 768px)) {
+					margin-top: 0;
 				}
 			}
 
 			h3 {
 				text-transform: uppercase;
 				margin-bottom: 29px;
-				@media (max-width: 1100px) {
+				@media (max-width: 1023px) {
 					margin-bottom: 16px;
 				}
 			}
@@ -412,15 +487,24 @@ body {
 				height: 160px;
 				color: $lightblue;
 				margin-bottom: 88px;
-				@media (max-width: 1100px) {
+
+				@media (max-width: 1200px) {
+					margin-bottom: 50px;
+				}
+
+				@media (max-width: 1023px) {
 					height: auto;
 					margin: auto;
 					margin-bottom: 40px;
 				}
+
+				@media ((max-width: 768px)) {
+					padding: 0 15px;
+				}
 			}
 
 			.crew-nav {
-				@media (max-width: 1100px) {
+				@media (max-width: 1023px) {
 					display: flex;
 					justify-content: center;
 					margin-bottom: 30px;
@@ -448,13 +532,47 @@ body {
 			}
 		}
 
-		img {
-			display: inline-block;
-			overflow: hidden;
-			@media (max-width: 1100px) {
-				width: 50vw;
+		.img-container {
+			height: 100%;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+
+			@media (max-width: 1200px) {
+				width: 400px;
+			}
+			@media ((max-width: 768px)) {
+				width: 100%;
+			}
+
+			img {
+				display: inline-block;
+				overflow: hidden;
+				display: block;
+				max-width: 500px;
+
+				@media (max-width: 1200px) {
+					max-width: 100%;
+				}
+
+				@media (max-width: 1023px) {
+					max-height: 100%;
+				}
 			}
 		}
+
+		@media (max-width: 1023px) {
+			flex-direction: column;
+			align-items: center;
+			padding-top: 160px;
+		}
+	}
+
+	@media ((max-width: 1023px)) {
+		background-image: url("../assets/crew//background-crew-tablet.jpg");
+	}
+	@media ((max-width: 480px)) {
+		background-image: url("../assets/crew/background-crew-mobile.jpg");
 	}
 }
 
@@ -466,7 +584,7 @@ body {
 	background-image: url("../assets/technology/background-technology-desktop.jpg");
 	background-size: cover;
 
-	@media ((max-width: 1024px)) {
+	@media ((max-width: 1023px)) {
 		background-image: url("../assets/technology/background-technology-tablet.jpg");
 	}
 	@media ((max-width: 480px)) {
@@ -477,7 +595,7 @@ body {
 		text-transform: uppercase;
 		margin: 200px 0 26px 11vw;
 
-		@media (max-width: 1100px) {
+		@media (max-width: 1023px) {
 			margin: 136px 0 30px 40px;
 		}
 		span {
@@ -542,92 +660,8 @@ body {
 			}
 		}
 
-		// .technology-image {
-		// 	width: ;
-		// }
-	}
-}
-
-//nav bar media queries
-@media (max-width: 1100px) {
-	#header {
-		top: 0;
-		.hr {
-			display: none;
-		}
-
-		#navbar {
-			gap: 37px;
+		.technology-image {
+			width: 60%;
 		}
 	}
-}
-
-//remove navbar padding
-@media (max-width: 1240px) {
-	#header {
-		#navbar {
-			padding-right: 0;
-		}
-	}
-}
-
-//responsive
-@media (max-width: 650px) {
-	#header {
-		.logo {
-			width: 40px;
-			height: 40px;
-			margin-left: 24px;
-		}
-
-		.navbar-menu {
-			display: block;
-		}
-
-		.navbar-exit {
-			display: block;
-		}
-
-		#navbar {
-			background-color: rgba(89, 100, 131, 0.1);
-			position: fixed;
-			top: 0;
-			right: 0;
-			flex-direction: column;
-			min-width: 67vw;
-			padding: 118px 0 0 0;
-			backdrop-filter: blur(30px);
-			height: 100vh;
-			justify-content: flex-start;
-			gap: 0 !important;
-			display: flex;
-			transition: right 0.5s ease-in;
-
-			a {
-				font-size: 1.6rem;
-				letter-spacing: 2.7px;
-				padding: 24px 32px;
-
-				&:after {
-					display: none;
-				}
-
-				span {
-					margin-right: 14px;
-				}
-			}
-
-			.active:after {
-				display: none;
-			}
-		}
-
-		.hide-navbar {
-			right: -100% !important;
-		}
-	}
-}
-
-@media only screen and (max-device-width: 480px) {
-	/* Set the viewport to the current width and lock the orientation */
 }
