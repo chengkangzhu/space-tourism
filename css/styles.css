@@ -305,6 +305,13 @@ body {
     margin: 136px 0 30px 40px;
   }
 }
+@media (max-width: 768px) {
+  #destination .destination-intro {
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 #destination .destination-intro span {
   opacity: 0.25;
   margin-right: 28px;
@@ -328,6 +335,12 @@ body {
   #destination .destination-wrapper img {
     width: 300px;
     height: 300px;
+  }
+}
+@media (max-width: 768px) {
+  #destination .destination-wrapper img {
+    width: 170px;
+    height: 170px;
   }
 }
 #destination .destination-wrapper .destination-content {
@@ -671,4 +684,7 @@ body {
   #header .hide-navbar {
     right: -100% !important;
   }
+}
+@media only screen and (max-device-width: 480px) {
+  /* Set the viewport to the current width and lock the orientation */
 }/*# sourceMappingURL=styles.css.map */

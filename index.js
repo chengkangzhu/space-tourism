@@ -52,7 +52,7 @@ function change_crew(role) {
 						data["crew"][i]["bio"];
 					document
 						.querySelector(".crew-image")
-						.setAttribute("src", data["crew"][i]["images"]["png"]);
+						.setAttribute("src", data["crew"][i]["images"]["webp"]);
 				}, 100);
 			}
 			//change active state
