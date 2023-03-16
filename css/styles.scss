@@ -101,7 +101,7 @@
 	}
 
 	//nav bar media queries
-	@media (max-width: 1023px) {
+	@media (max-width: 1024px) {
 		top: 0;
 		.hr {
 			display: none;
@@ -253,7 +253,7 @@
 		}
 	}
 
-	@media ((max-width: 1023px)) {
+	@media ((max-width: 1024px)) {
 		background-image: url("../assets//home/background-home-tablet.jpg");
 	}
 
@@ -276,14 +276,14 @@
 
 	.destination-intro {
 		text-transform: uppercase;
-		margin: 200px 0 64px 11vw;
+		margin: 200px 0 20px 11vw;
 
 		span {
 			opacity: 0.25;
 			margin-right: 28px;
 		}
 
-		@media (max-width: 1023px) {
+		@media (max-width: 1024px) {
 			margin: 136px 0 30px 40px;
 		}
 		@media (max-width: 768px) {
@@ -303,7 +303,7 @@
 			width: 445px;
 			height: 445px;
 
-			@media (max-width: 1023px) {
+			@media (max-width: 1024px) {
 				width: 300px;
 				height: 300px;
 			}
@@ -317,7 +317,7 @@
 		.destination-content {
 			max-width: 445px;
 
-			@media (max-width: 1023px) {
+			@media (max-width: 1024px) {
 				text-align: center;
 			}
 			@media (max-width: 480px) {
@@ -328,7 +328,7 @@
 				display: flex;
 				gap: 35px;
 
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					justify-content: center;
 					margin-top: 50px;
 				}
@@ -367,7 +367,7 @@
 
 			h2 {
 				margin: 37px 0 15px;
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					margin: 30px 0 0;
 				}
 			}
@@ -375,7 +375,7 @@
 			p {
 				color: $lightblue;
 				margin-bottom: 54px;
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					margin-bottom: 30px;
 				}
 			}
@@ -402,7 +402,7 @@
 		}
 	}
 
-	@media ((max-width: 1023px)) {
+	@media ((max-width: 1024px)) {
 		background-image: url("../assets/destination/background-destination-tablet.jpg");
 
 		.destination-wrapper {
@@ -430,7 +430,7 @@
 			margin-right: 28px;
 		}
 
-		@media (max-width: 1023px) {
+		@media (max-width: 1024px) {
 			margin: 136px 0 0px 40px;
 		}
 		@media ((max-width: 768px)) {
@@ -451,7 +451,7 @@
 		.crew-contents {
 			max-width: 620px;
 			height: 100%;
-			@media (max-width: 1023px) {
+			@media (max-width: 1024px) {
 				text-align: center;
 				height: auto;
 			}
@@ -465,7 +465,7 @@
 					margin-top: 60px;
 				}
 
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					margin-bottom: 8px;
 				}
 
@@ -477,7 +477,7 @@
 			h3 {
 				text-transform: uppercase;
 				margin-bottom: 29px;
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					margin-bottom: 16px;
 				}
 			}
@@ -486,13 +486,13 @@
 				max-width: 444px;
 				height: 160px;
 				color: $lightblue;
-				margin-bottom: 88px;
+				margin-bottom: 28px;
 
 				@media (max-width: 1200px) {
 					margin-bottom: 50px;
 				}
 
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					height: auto;
 					margin: auto;
 					margin-bottom: 40px;
@@ -504,7 +504,7 @@
 			}
 
 			.crew-nav {
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					display: flex;
 					justify-content: center;
 					margin-bottom: 30px;
@@ -535,7 +535,7 @@
 		.img-container {
 			height: 100%;
 			display: flex;
-			align-items: flex-end;
+			align-items: center;
 			justify-content: center;
 
 			@media (max-width: 1200px) {
@@ -550,25 +550,26 @@
 				overflow: hidden;
 				display: block;
 				max-width: 500px;
+				max-height: 50vh;
 
 				@media (max-width: 1200px) {
 					max-width: 100%;
 				}
 
-				@media (max-width: 1023px) {
+				@media (max-width: 1024px) {
 					max-height: 100%;
 				}
 			}
 		}
 
-		@media (max-width: 1023px) {
+		@media (max-width: 1024px) {
 			flex-direction: column;
 			align-items: center;
 			padding-top: 160px;
 		}
 	}
 
-	@media ((max-width: 1023px)) {
+	@media ((max-width: 1024px)) {
 		background-image: url("../assets/crew//background-crew-tablet.jpg");
 	}
 	@media ((max-width: 480px)) {
@@ -584,7 +585,7 @@
 	background-image: url("../assets/technology/background-technology-desktop.jpg");
 	background-size: cover;
 
-	@media ((max-width: 1023px)) {
+	@media ((max-width: 1024px)) {
 		background-image: url("../assets/technology/background-technology-tablet.jpg");
 	}
 	@media ((max-width: 480px)) {
@@ -595,7 +596,7 @@
 		text-transform: uppercase;
 		margin: 200px 0 26px 11vw;
 
-		@media (max-width: 1023px) {
+		@media (max-width: 1024px) {
 			margin: 136px 0 30px 40px;
 		}
 		span {
