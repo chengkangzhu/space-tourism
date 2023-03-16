@@ -137,7 +137,7 @@
 			min-width: 67vw;
 			padding: 118px 0 0 0;
 			backdrop-filter: blur(30px);
-			height: 100vh;
+			min-height: 100vh;
 			justify-content: flex-start;
 			gap: 0 !important;
 			display: flex;
@@ -168,9 +168,13 @@
 	}
 }
 
+// body {
+// 	overflow: hidden;
+// }
+
 #home {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -179,30 +183,15 @@
 
 	.hero-text {
 		max-width: 450px;
-
 		h1 {
 			margin: 24px 0;
-
-			@media (max-width: 480px) {
-				margin: 16px 0;
-			}
 		}
-
 		h5 {
 			margin-top: 250px;
-
-			@media (max-width: 950px) {
-				margin-top: 150px;
-			}
-		}
-
-		h5,
-		p {
 			color: $lightblue;
 		}
-
-		@media (max-width: 480px) {
-			padding: 20px;
+		p {
+			color: $lightblue;
 		}
 	}
 
@@ -247,7 +236,7 @@
 			height: 242px;
 		}
 
-		@media (max-width: 48px) {
+		@media (max-width: 480px) {
 			width: 150px;
 			height: 150px;
 		}
@@ -260,15 +249,29 @@
 	@media (max-width: 950px) {
 		flex-direction: column;
 		text-align: center;
+
+		.hero-text {
+			h5 {
+				margin-top: 150px;
+			}
+		}
 	}
 
 	@media ((max-width: 480px)) {
 		background-image: url("../assets//home/background-home-mobile.jpg");
+
+		.hero-text {
+			padding: 20px;
+
+			h1 {
+				margin: 16px 0;
+			}
+		}
 	}
 }
 
 #destination {
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	overflow: hidden;
 	background-image: url("../assets/destination/background-destination-desktop.jpg");
@@ -389,6 +392,7 @@
 			}
 
 			table {
+				padding-bottom: 40px;
 				.subhead-2 {
 					color: $lightblue;
 					text-transform: uppercase;
@@ -401,8 +405,7 @@
 			}
 		}
 	}
-
-	@media ((max-width: 1024px)) {
+	@media only screen and (max-width: 1024px) and (orientation: portrait) {
 		background-image: url("../assets/destination/background-destination-tablet.jpg");
 
 		.destination-wrapper {
@@ -416,7 +419,7 @@
 
 #crew {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	overflow: hidden;
 	background-image: url("../assets/crew/background-crew-desktop.jpg");
 	background-size: cover;
@@ -446,7 +449,7 @@
 		display: flex;
 		justify-content: space-evenly;
 		align-items: flex-start;
-		height: calc(100vh - 234px);
+		min-height: calc(100vh - 234px);
 
 		.crew-contents {
 			max-width: 620px;
@@ -561,8 +564,7 @@
 				}
 			}
 		}
-
-		@media (max-width: 1024px) {
+		@media only screen and (max-width: 1024px) and (orientation: portrait) {
 			flex-direction: column;
 			align-items: center;
 			padding-top: 160px;
@@ -579,7 +581,7 @@
 
 #technology {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	overflow: hidden;
 	margin: auto;
 	background-image: url("../assets/technology/background-technology-desktop.jpg");
@@ -608,15 +610,24 @@
 	.technology-wrapper {
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
 
 		.technolo-content {
 			display: flex;
 			margin-left: 11vw;
 			align-items: center;
+
+			@media (max-width: 1100px) {
+				margin:auto;
+				margin-top: 40px;
+			}
 		}
 
 		.technology-navbar {
-			margin-right: 80px;
+			margin-right: 3vw;
+			@media (max-width: 1100px) {
+				margin-right: 40px;
+			}
 
 			a {
 				display: block;
@@ -647,7 +658,8 @@
 		}
 
 		.technology-info-wrapper {
-			width: 470px;
+			max-width: 470px;
+			width: 100%;
 
 			.nav-text {
 				color: $lightblue;
@@ -657,12 +669,37 @@
 			.technology-info {
 				color: $lightblue;
 				margin-top: 17px;
-				width: 444px;
+				width: 90%;
 			}
 		}
 
 		.technology-image {
-			width: 60%;
+			width: 500px;
+			height: 500px;
+			background-image: url(../assets/technology/image-launch-vehicle-portrait.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		@media (max-width: 1200px) {
+			.technology-image {
+				width: 400px;
+				height: 400px;
+			}
+		}
+	}
+	@media (max-width: 1100px) {
+		.technology-wrapper {
+			flex-direction: column-reverse;
+
+			.technology-image {
+				width: 100vw;
+				margin: auto;
+				display: block;
+				height: 300px;
+				background-image: url(../assets/technology/image-launch-vehicle-landscape.jpg);
+			}
 		}
 	}
 }
