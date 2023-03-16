@@ -74,11 +74,18 @@ function change_technology(technology) {
 						data["technology"][i]["name"];
 					document.querySelector(".technology-info").innerHTML =
 						data["technology"][i]["description"];
+						
 					document
-						.querySelector(".technology-image")
+					.querySelector(".technology-image-portrait")
+					.setAttribute(
+						"src",
+						data["technology"][i]["images"]["portrait"]
+					);
+					document
+						.querySelector(".technology-image-landscape")
 						.setAttribute(
 							"src",
-							data["technology"][i]["images"]["portrait"]
+							data["technology"][i]["images"]["landscape"]
 						);
 				}, 100);
 			}

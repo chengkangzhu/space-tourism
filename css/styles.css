@@ -33,10 +33,12 @@ h1 {
 
 h2 {
   font-size: 10rem;
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 5.6rem;
+  text-transform: uppercase;
 }
 
 h4 {
@@ -284,33 +286,41 @@ p {
   }
 }
 
+body {
+  overflow: hidden;
+}
+
 #home {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-image: url("../assets/home/background-home-desktop.jpg");
   background-size: cover;
+  gap: 50px;
 }
 #home .hero-text {
   max-width: 450px;
+  height: 100vh;
 }
 #home .hero-text h1 {
   margin: 24px 0;
 }
 #home .hero-text h5 {
-  margin-top: 250px;
+  padding-top: 250px;
   color: #D0D6F9;
 }
 #home .hero-text p {
   color: #D0D6F9;
 }
-#home .explore-circle {
+#home h4 {
   margin-top: 400px;
   width: 275px;
   height: 275px;
   background-color: white;
+  color: black;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -318,7 +328,7 @@ p {
   position: relative;
   z-index: 1;
 }
-#home .explore-circle:before {
+#home h4:before {
   content: "";
   width: 274px;
   height: 274px;
@@ -328,25 +338,20 @@ p {
   transition: 1s ease;
   z-index: -1;
 }
-#home .explore-circle:hover:before {
+#home h4:hover:before {
   width: 450px;
   height: 450px;
   background-color: #979797;
 }
-#home .explore-circle h4 {
-  text-align: center;
-  color: #0b0d17;
-  z-index: 10;
-}
 @media (max-width: 950px) {
-  #home .explore-circle {
+  #home h4 {
     margin-top: 0;
     width: 242px;
     height: 242px;
   }
 }
 @media (max-width: 480px) {
-  #home .explore-circle {
+  #home h4 {
     width: 150px;
     height: 150px;
   }
@@ -362,7 +367,7 @@ p {
     text-align: center;
   }
   #home .hero-text h5 {
-    margin-top: 150px;
+    padding-top: 150px;
   }
 }
 @media ((max-width: 480px)) {
@@ -378,9 +383,9 @@ p {
 }
 
 #destination {
-  min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  height: 100vh;
+  overflow: auto;
   background-image: url("../assets/destination/background-destination-desktop.jpg");
   background-size: cover;
 }
@@ -526,8 +531,8 @@ p {
 
 #crew {
   width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100vh;
+  overflow: auto;
   background-image: url("../assets/crew/background-crew-desktop.jpg");
   background-size: cover;
 }
@@ -584,11 +589,6 @@ p {
     margin-bottom: 8px;
   }
 }
-@media ((max-width: 768px)) {
-  #crew .crew-wrapper .crew-contents h4 {
-    margin-top: 0;
-  }
-}
 #crew .crew-wrapper .crew-contents h3 {
   text-transform: uppercase;
   margin-bottom: 29px;
@@ -600,24 +600,29 @@ p {
 }
 #crew .crew-wrapper .crew-contents p {
   max-width: 444px;
-  height: 160px;
+  height: 200px;
   color: #D0D6F9;
-  margin-bottom: 28px;
-}
-@media (max-width: 1200px) {
-  #crew .crew-wrapper .crew-contents p {
-    margin-bottom: 50px;
-  }
 }
 @media (max-width: 1024px) {
   #crew .crew-wrapper .crew-contents p {
-    height: auto;
+    height: 140px;
     margin: auto;
-    margin-bottom: 40px;
   }
 }
-@media ((max-width: 768px)) {
+@media ((max-width: 769px)) {
   #crew .crew-wrapper .crew-contents p {
+    height: 160px;
+  }
+}
+@media ((max-width: 490px)) {
+  #crew .crew-wrapper .crew-contents p {
+    height: 180px;
+    padding: 0 15px;
+  }
+}
+@media ((max-width: 330px)) {
+  #crew .crew-wrapper .crew-contents p {
+    height: 200px;
     padding: 0 15px;
   }
 }
@@ -678,11 +683,11 @@ p {
     max-height: 100%;
   }
 }
-@media only screen and (max-width: 1024px) and (orientation: portrait) {
+@media only screen and (max-width: 1024px) {
   #crew .crew-wrapper {
     flex-direction: column;
     align-items: center;
-    padding-top: 160px;
+    padding-top: 0px;
   }
 }
 @media ((max-width: 1024px)) {
@@ -698,8 +703,8 @@ p {
 
 #technology {
   width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100vh;
+  overflow: auto;
   margin: auto;
   background-image: url("../assets/technology/background-technology-desktop.jpg");
   background-size: cover;
@@ -716,11 +721,18 @@ p {
 }
 #technology .technology-intro {
   text-transform: uppercase;
-  margin: 200px 0 26px 11vw;
+  margin: 200px 0 30px 11vw;
 }
 @media (max-width: 1024px) {
   #technology .technology-intro {
     margin: 136px 0 30px 40px;
+  }
+}
+@media (max-width: 768px) {
+  #technology .technology-intro {
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 #technology .technology-intro span {
@@ -739,6 +751,7 @@ p {
 }
 @media (max-width: 1100px) {
   #technology .technology-wrapper .technolo-content {
+    flex-direction: column;
     margin: auto;
     margin-top: 40px;
   }
@@ -748,7 +761,8 @@ p {
 }
 @media (max-width: 1100px) {
   #technology .technology-wrapper .technology-navbar {
-    margin-right: 40px;
+    display: flex;
+    gap: 30px;
   }
 }
 #technology .technology-wrapper .technology-navbar a {
@@ -767,6 +781,12 @@ p {
 }
 #technology .technology-wrapper .technology-navbar a:hover {
   border: 1px solid #FFFFFF;
+}
+@media (max-width: 500px) {
+  #technology .technology-wrapper .technology-navbar a {
+    width: 60px;
+    height: 60px;
+  }
 }
 #technology .technology-wrapper .technology-navbar .active {
   background-color: #FFFFFF;
@@ -787,29 +807,74 @@ p {
   margin-top: 17px;
   width: 90%;
 }
-#technology .technology-wrapper .technology-image {
-  width: 500px;
-  height: 500px;
-  background-image: url(../assets/technology/image-launch-vehicle-portrait.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+@media (max-width: 1100px) {
+  #technology .technology-wrapper .technology-info-wrapper .technology-info {
+    width: 100%;
+    margin: auto;
+    padding: 17px 15px 60px;
+  }
 }
-@media (max-width: 1200px) {
-  #technology .technology-wrapper .technology-image {
-    width: 400px;
-    height: 400px;
+@media (max-width: 1100px) {
+  #technology .technology-wrapper .technology-info-wrapper {
+    text-align: center;
+  }
+}
+#technology .technology-wrapper .technology-image-landscape {
+  display: none;
+}
+@media (max-width: 1100px) {
+  #technology .technology-wrapper .technology-image-portrait {
+    display: none;
+  }
+  #technology .technology-wrapper .technology-image-landscape {
+    display: block;
+    margin-top: 60px;
   }
 }
 @media (max-width: 1100px) {
   #technology .technology-wrapper {
     flex-direction: column-reverse;
   }
-  #technology .technology-wrapper .technology-image {
-    width: 100vw;
-    margin: auto;
-    display: block;
-    height: 300px;
-    background-image: url(../assets/technology/image-launch-vehicle-landscape.jpg);
-  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8c8c8c;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }/*# sourceMappingURL=styles.css.map */
