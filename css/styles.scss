@@ -185,7 +185,6 @@ body {
 
 	.hero-text {
 		max-width: 450px;
-		// height: 100vh;
 
 		h1 {
 			margin: 24px 0;
@@ -250,14 +249,21 @@ body {
 	}
 
 	@media (max-width: 950px) {
-		flex-direction: column;
+		// flex-direction: column;
+		display:block;
+		
 		text-align: center;
 
 		.hero-text {
+			margin:auto;
 			h5 {
 				padding-top: 150px;
 			}
+
 		}
+			h4{
+				margin: 100px auto 50px;
+			}
 	}
 
 	@media ((max-width: 480px)) {
@@ -448,8 +454,6 @@ body {
 	.crew-wrapper {
 		position: relative;
 		display: flex;
-		position: relative;
-		display: flex;
 		justify-content: space-evenly;
 		align-items: flex-start;
 		height: calc(100vh - 234px);
@@ -460,6 +464,7 @@ body {
 			@media (max-width: 1024px) {
 				text-align: center;
 				height: auto;
+				margin: auto;
 			}
 
 			h4 {
@@ -468,7 +473,7 @@ body {
 				padding: 120px 0 15px;
 
 				@media (max-width: 1024px) {
-					padding-top: 220px;
+					padding-top:60px;
 				}
 			}
 
@@ -544,11 +549,15 @@ body {
 				overflow: hidden;
 				display: block;
 				max-height: 50vh;
+			
+				@media (max-width: 1024px) {
+					margin:auto;
+				}
 			}
 		}
 		@media only screen and (max-width: 1024px) {
-			flex-direction: column;
-			align-items: center;
+			display:block;
+			height: auto;
 			padding-top: 0px;
 		}
 	}
@@ -698,16 +707,16 @@ body {
 	}
 }
 
-@media (max-width: 767px) and (orientation: landscape) {
-	html {
-		transform: rotate(90deg);
-		transform-origin: center center;
-		width: 100vh;
-		overflow-x: hidden;
-		position: absolute;
-		top: 0;
-		left: 0;
-		margin: 0;
-		padding: 0;
-	}
-}
+// @media (max-width: 900px) and (orientation: landscape) {
+// 	html {
+// 		transform: rotate(90deg);
+// 		transform-origin: center center;
+// 		width: 100vh;
+// 		overflow-x: hidden;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+// }

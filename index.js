@@ -1,6 +1,6 @@
-$(".nav-text").click(function () {
+$("#navbar li a").click(function () {
 	// Remove active class from all nav links
-	$(".nav-text").removeClass("active");
+	$("#navbar li a").removeClass("active");
 	// Add active class to clicked nav link
 	$(this).addClass("active");
 });
@@ -115,10 +115,6 @@ $(".nav-text").click(function () {
 
 function change_destination(destination) {
 	if (destination !== undefined) {
-		// change active state
-		$(".destination-content-navbar li a").removeClass("active");
-		$("#" + destination).addClass("active");
-
 		// change content
 		var dest = data.destinations.find((d) => d.name === destination);
 		$(".destination-name").html(dest.name);
@@ -128,8 +124,9 @@ function change_destination(destination) {
 		$(".destination-image").attr("src", dest.images.png);
 
 		// change active state
-		$(".small-dots").removeClass("active");
-		$("#" + destination).addClass("active");
+		$(".destination-content-navbar li a").removeClass("active");
+			$("#" + destination).addClass("active");
+
 	}
 }
 function change_crew(role) {
