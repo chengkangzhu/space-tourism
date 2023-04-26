@@ -1,15 +1,12 @@
 var currentUrl = window.location.hash;
-if (currentUrl == "") {
-	window.location.href = "/#home";
-	window.location.reload()
-}
 $("#navbar li a").each(function () {
 	if ($(this).attr("href") === currentUrl) {
 		$(this).addClass("active");
 	}
 	$("section").hide();
-	if (currentUrl === "#home") {
-		$(currentUrl).css("display", "flex");
+	if (currentUrl === "#home" || currentUrl === "") {
+		$("#home").css("display", "flex");
+		$(".home-link").addClass("active");
 	} else {
 		$(currentUrl).show();
 	}
