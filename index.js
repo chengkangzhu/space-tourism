@@ -1,8 +1,27 @@
+var currentUrl = window.location.hash;
+$("#navbar li a").each(function () {
+	if ($(this).attr("href") === currentUrl) {
+		$(this).addClass("active");
+	}
+	$("section").hide();
+	if (currentUrl === "#home") {
+		$(currentUrl).css("display", "flex");
+	} else {
+		$(currentUrl).show();
+	}
+});
+
 $("#navbar li a").click(function () {
-	// Remove active class from all nav links
 	$("#navbar li a").removeClass("active");
-	// Add active class to clicked nav link
+	$("section").hide();
+
+
 	$(this).addClass("active");
+	if (this.hash === "#home") {
+		$(this.hash).css("display", "flex");
+	} else {
+		$(this.hash).show();
+	}
 });
 
 // function change_destination(destination) {
@@ -125,8 +144,7 @@ function change_destination(destination) {
 
 		// change active state
 		$(".destination-content-navbar li a").removeClass("active");
-			$("#" + destination).addClass("active");
-
+		$("#" + destination).addClass("active");
 	}
 }
 function change_crew(role) {

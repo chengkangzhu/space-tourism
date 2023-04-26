@@ -341,8 +341,8 @@ p {
   }
 }
 
-body {
-  overflow: hidden;
+body section {
+  display: none;
 }
 
 #home {
@@ -365,6 +365,11 @@ body {
 #home .hero-text h5 {
   padding-top: 250px;
   color: #d0d6f9;
+}
+@media (max-width: 950px) {
+  #home .hero-text h5 {
+    padding-top: 0;
+  }
 }
 #home .hero-text p {
   color: #d0d6f9;
@@ -397,10 +402,12 @@ body {
   transition: 1s ease;
   z-index: -1;
 }
-#home h4:hover:before {
-  width: 450px;
-  height: 450px;
-  background-color: #979797;
+@media (min-width: 1024px) {
+  #home h4:hover:before {
+    width: 450px;
+    height: 450px;
+    background-color: #979797;
+  }
 }
 @media (max-width: 950px) {
   #home h4 {
@@ -422,14 +429,12 @@ body {
 }
 @media (max-width: 950px) {
   #home {
-    display: block;
+    flex-direction: column;
+    padding-top: 136px;
+    gap: 0;
     text-align: center;
-  }
-  #home .hero-text {
-    margin: auto;
-  }
-  #home .hero-text h5 {
-    padding-top: 150px;
+    min-height: 800px;
+    justify-content: flex-start;
   }
   #home h4 {
     margin: 100px auto 50px;
