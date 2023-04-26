@@ -1,4 +1,8 @@
 var currentUrl = window.location.hash;
+if (currentUrl == "") {
+	window.location.href = "/#home";
+	window.location.reload()
+}
 $("#navbar li a").each(function () {
 	if ($(this).attr("href") === currentUrl) {
 		$(this).addClass("active");
@@ -14,7 +18,6 @@ $("#navbar li a").each(function () {
 $("#navbar li a").click(function () {
 	$("#navbar li a").removeClass("active");
 	$("section").hide();
-
 
 	$(this).addClass("active");
 	if (this.hash === "#home") {
